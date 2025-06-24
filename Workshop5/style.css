@@ -1,0 +1,144 @@
+/* VARIABLES PERSONALIZADAS */
+:root {
+  --verde-monster: #00ff00;
+  --negro-fondo: #0d0d0d;
+  --gris-oscuro: #1a1a1a;
+  --verde-oscuro: #004d00;
+  --sombra-monster: rgba(0, 255, 0, 0.3);
+  --borde-monster: #ffcc00;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: var(--negro-fondo);
+  color: white;
+}
+
+/* ELEMENTO Y CLASE */
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 350px;
+  object-fit: contain;
+  background-color: black;
+}
+
+/* COMBINADO (CLASE + ELEMENTO) */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 30px;
+  background-color: #111;
+}
+
+.hero img {
+  max-width: 200px;
+  box-shadow: 0 0 15px var(--sombra-monster);
+}
+
+/* SELECTOR DE GRUPO */
+h1, h2, h3 {
+  color: var(--verde-monster);
+  font-weight: bold;
+}
+
+/* SELECTOR DE CLASE */
+.btn-monster {
+  background-color: var(--verde-monster);
+  color: black !important; /* Fuerza el color negro*/
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* PSEUDOCLASE */
+.btn-monster:hover {
+  background-color: #33ff33;
+  transform: scale(1.05);
+}
+
+/* CHILD SELECTOR */
+.stats > div {
+  flex: 1;
+  padding: 10px;
+}
+
+/* CLASE CON ELEMENTO */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(90deg, #003300, #006600);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* ELEMENTO */
+.stats h3 {
+  font-size: 2em;
+  color: var(--verde-monster);
+}
+
+/* CLASE SIMPLE */
+.section {
+  padding: 60px 30px;
+  text-align: center;
+  background-color: var(--negro-fondo);
+}
+
+/* CLASE */
+.section-light {
+  background-color: var(--gris-oscuro);
+}
+
+/* ELEMENTO */
+.images-section {
+  background: linear-gradient(90deg, #003300, var(--verde-oscuro));
+  padding: 60px 20px;
+}
+
+/* SELECTOR POR ID */
+#muchasLatas {
+  border: 1px solid var(--borde-monster);
+  padding: 5px;
+  margin-top: 2rem;
+}
+
+/* SELECTOR POR ATRIBUTO */
+img[alt*="Monster"] {
+  filter: brightness(1.1);
+}
+
+/* ATRIBUTO DE ENLACES EXTERNOS */
+a[href^="https"] {
+  color: var(--verde-monster);
+  text-decoration: none;
+}
+
+/* PSEUDOELEMENTO ::before */
+.section h2::before {
+  content: "💥";
+  color: var(--borde-monster);
+}
+
+/* PSEUDOELEMENTO ::after con PSEUDOCLASE */
+.stats > div:first-child::after {
+  content: "⚡";
+  color: gold;
+}
+
+/* GENERAL PARA TODAS LAS IMÁGENES */
+img {
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
