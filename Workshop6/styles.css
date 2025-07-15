@@ -1,0 +1,159 @@
+/* ======== Reset Básico y Fuente General ======== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ece2e2;
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* ======== Layout Principal en Flexbox ======== */
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* ======== Columnas ======== */
+.sidebar {
+    flex: 1;
+    background-color: #ccceff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-content {
+    flex: 2;
+    background-color: #faf1f1;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#proyectos {
+    flex: 1.5;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ======== Imagen de perfil ======== */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* ======== Redes sociales ======== */
+.social-icons a {
+    margin: 0 0.4rem;
+}
+
+/* ======== Secciones internas ======== */
+section {
+    margin-bottom: 2rem;
+}
+
+h2, h3, h4 {
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ======== Proyectos Grid ======== */
+.proyectos-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.proyecto {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.proyecto h4 {
+    margin-bottom: 0.5rem;
+}
+
+.proyecto a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.proyecto a:hover {
+    text-decoration: underline;
+}
+
+/* ======== Media Queries ======== */
+
+/* Teléfonos */
+@media (max-width: 599px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .main-content,
+    #proyectos {
+        width: 100%;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 14px;
+        padding: 0.5rem;
+    }
+}
+
+/* Tabletas */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container-fluid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .main-content {
+        flex: 1 1 50%;
+        order: 2;
+    }
+
+    #proyectos {
+        flex: 1 1 50%;
+        order: 3;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Escritorios grandes */
+@media (min-width: 1025px) {
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+}
